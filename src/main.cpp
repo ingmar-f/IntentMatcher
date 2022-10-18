@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
     std::unique_ptr<Intent> intent = matcher.match(words);
 
     if (intent)
-        std::cout << *intent;
+        std::cout << *intent << std::endl;
     else
         std::cout << "no match" << std::endl;
 
