@@ -26,7 +26,7 @@ void IntentMatcher::init(IntentMatcher::InputLanguage lang)
 
 std::unique_ptr<Intent> IntentMatcher::match(const std::vector<std::string>& words) const
 {
-    if (words.size() == 0)
+    if (words.empty())
         return nullptr;
 
     // Collect matched keywords by type to avoid more string comparisons later.
@@ -38,7 +38,7 @@ std::unique_ptr<Intent> IntentMatcher::match(const std::vector<std::string>& wor
         if (auto entry = keywordDict.find(word); entry != keywordDict.end())
             foundKeywords.push_back(entry->second);
 
-    if (foundKeywords.size() == 0)
+    if (foundKeywords.empty())
         return nullptr;
 
     return intentFactory.getMatchingIntent(foundKeywords);
