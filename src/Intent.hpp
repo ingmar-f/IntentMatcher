@@ -15,8 +15,13 @@ public:
     /// Returns a human-readable description of the intent.
     virtual std::string describe() const = 0;
 
+    /**
+     * Obtains a list of keyword types that that match this intent.
+     * @param[out] The list of keyword types.
+     */
     virtual void getMatchedKeywordTypes(std::vector<KeywordType>& result) const = 0;
 
+    /// Creates a copy of this intent.
     virtual std::unique_ptr<Intent> clone() const = 0;
 
     virtual ~Intent() = default;

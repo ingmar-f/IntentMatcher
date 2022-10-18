@@ -9,8 +9,6 @@
 class GetIntent : public Intent
 {
 public:
-    virtual void getMatchedKeywordTypes(
-        std::vector<KeywordType>& result) const override;
-
+    virtual void getMatchedKeywordTypes(std::vector<KeywordType>& result) const override;
     virtual std::string describe() const override;
 };

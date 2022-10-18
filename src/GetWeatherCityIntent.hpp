@@ -5,6 +5,10 @@
 
 /**
  * @brief An intent for getting weather information for a city.
+ *
+ * @todo Depending on what the Intent classes are supposed to be used for,
+ *       this kind of intent would need knowledge of the keyword in addition
+ *       to the keyword type.
  */
 class GetWeatherCityIntent : public GetWeatherIntent
 {

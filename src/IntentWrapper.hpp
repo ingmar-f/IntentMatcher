@@ -5,6 +5,11 @@
 
 typedef std::unique_ptr<Intent> intent_uptr;
 
+/**
+ * @brief A wrapper around an Intent.
+ *
+ * Forwards some calls to the wrapped Intent object and can create a copy.
+ */
 class IntentWrapper
 {
 public:
@@ -18,11 +23,13 @@ public:
 
     ~IntentWrapper() = default;
 
+    /// Forwards the call to Intent::getMatchedKeywordTypes().
     void getMatchedKeywordTypes(std::vector<KeywordType>& result) const
     {
         wrapped->getMatchedKeywordTypes(result);
     }
 
+    /// Returns a copy of the wrapped Intent.
     intent_uptr createIntent() const
     {
         return intent_uptr(wrapped->clone());
