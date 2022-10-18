@@ -1,10 +1,14 @@
 #include <algorithm>
 #include "IntentFactory.hpp"
 #include "GetWeatherIntent.hpp"
+#include "GetWeatherCityIntent.hpp"
+#include "GetFactIntent.hpp"
 
 IntentFactory::IntentFactory()
 {
     wrappers.push_back(std::make_unique<IntentWrapper>(std::make_unique<GetWeatherIntent>()));
+    wrappers.push_back(std::make_unique<IntentWrapper>(std::make_unique<GetWeatherCityIntent>()));
+    wrappers.push_back(std::make_unique<IntentWrapper>(std::make_unique<GetFactIntent>()));
 }
 
 intent_uptr IntentFactory::getMatchingIntent(const std::vector<KeywordType>& keywordTypes) const

@@ -15,6 +15,8 @@ add_executable(match
     src/IntentFactory.cpp
     src/GetIntent.cpp
     src/GetWeatherIntent.cpp
+    src/GetWeatherCityIntent.cpp
+    src/GetFactIntent.cpp
 )
 
 include(GoogleTest)
