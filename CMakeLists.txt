@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.22)
 project (IntentMatcher)
 find_package(GTest)
 
-set(CMAKE_CXX_STANDARD 14) # for GoogleTest
+set(CMAKE_CXX_STANDARD 17)
 
 add_compile_options(-Wall -Wextra -pedantic -Werror)
 include_directories(src)

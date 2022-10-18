@@ -24,9 +24,21 @@ void IntentMatcher::init(IntentMatcher::InputLanguage lang)
     }
 }
 
-std::unique_ptr<Intent> IntentMatcher::match(const std::vector<std::string>& words)
+std::unique_ptr<Intent> IntentMatcher::match(const std::vector<std::string>& words) const
 {
     if (words.size() == 0)
+        return nullptr;
+
+    // Collect matched keywords by type to avoid more string comparisons later.
+    // @todo Using a set would be sufficient here, but an extension of this
+    // implementation might need to pass the actual keyword to the intent, so
+    // multiple keywords of the same type might be needed.
+    std::vector<KeywordType> foundKeywords;
+    for (auto word : words)
+        if (auto entry = keywordDict.find(word); entry != keywordDict.end())
+            foundKeywords.push_back(entry->second);
+
+    if (foundKeywords.size() == 0)
         return nullptr;
 
     return nullptr;
