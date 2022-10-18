@@ -41,5 +41,5 @@ std::unique_ptr<Intent> IntentMatcher::match(const std::vector<std::string>& wor
     if (foundKeywords.size() == 0)
         return nullptr;
 
-    return nullptr;
+    return intentFactory.getMatchingIntent(foundKeywords);
 }

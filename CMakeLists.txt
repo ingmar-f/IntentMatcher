@@ -12,6 +12,9 @@ add_executable(match
     src/tokenizer.cpp
     src/Intent.cpp
     src/IntentMatcher.cpp
+    src/IntentFactory.cpp
+    src/GetIntent.cpp
+    src/GetWeatherIntent.cpp
 )
 
 include(GoogleTest)

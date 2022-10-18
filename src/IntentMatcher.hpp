@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include "Intent.hpp"
+#include "IntentFactory.hpp"
 
 class IntentMatcher
 {
@@ -22,6 +23,8 @@ public:
 
 private:
     void init(const InputLanguage lang);
+
+    IntentFactory intentFactory;
 
     // Maps a keyword type to a list of words of that type.
     std::map<KeywordType, std::vector<std::string>> keywordTypeDict;
