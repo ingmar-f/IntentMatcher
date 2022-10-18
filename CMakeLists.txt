@@ -21,13 +21,22 @@ add_executable(match
 
 include(GoogleTest)
 
-add_executable(tokenizer_test
+add_executable(tests
     src/tokenizer.cpp
+    src/Intent.cpp
+    src/IntentMatcher.cpp
+    src/IntentFactory.cpp
+    src/GetIntent.cpp
+    src/GetWeatherIntent.cpp
+    src/GetWeatherCityIntent.cpp
+    src/GetFactIntent.cpp
     test/tokenizer_test.cpp
+    test/matcher_test.cpp
 )
 
 target_link_libraries(
-    tokenizer_test
+    tests
     GTest::gtest_main
 )
-gtest_discover_tests(tokenizer_test)
+
+gtest_discover_tests(tests)
