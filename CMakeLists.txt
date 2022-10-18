@@ -10,6 +10,8 @@ include_directories(src)
 add_executable(match
     src/main.cpp
     src/tokenizer.cpp
+    src/Intent.cpp
+    src/IntentMatcher.cpp
 )
 
 include(GoogleTest)

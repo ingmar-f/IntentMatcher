@@ -1,5 +1,4 @@
-#ifndef tokenizer_h
-#define tokenizer_h
+#pragma once
 
 #include <string>
 #include <vector>
@@ -17,5 +16,3 @@ namespace tokenizer
  */
 void tokenize(const std::string& in, stringvec& result);
 }
-
-#endif
